@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="mootools-core-1.4.5-compat.js"></script>
+<script src="mootools-more-1.4.0.1-compat.js"></script>
+<script src="mooMap.js"></script>
+<title>mooMap Sample</title>
+</head>
+
+<body>
+<!--
+    http://makkamappa.com/system/maps/878/original/Bangalore-City-Map.gif
+    http://www.lib.utexas.edu/maps/historical/iraq_northern_1970.jpg
+    http://www.zonu.com/images/0X0/2009-09-18-7087/World-physical-map-2003.jpg
+    maps/iraq_northern_1970.jpg
+    http://www.ezilon.com/maps/images/africa/political-map-of-Togo.gif
+-->
+	<img src="http://www.lib.utexas.edu/maps/historical/iraq_northern_1970.jpg" id="mymap"/>
+<script>
+window.addEvent('domready',function(){
+	console.log('Hello World');
+	$('mymap').addEvent('load',function(){
+		var map=new mooMap(this,{width:600,height:400,center:[1165,2374],zoom:35});
+			els={"el0":[2204,1079],"el1":[1871,892],"el2":[1504,1020],"el3":[1340,982],"el4":[1656,756],"el5":[1862,762],"el6":[1664,1479],"el7":[2155,1553],"el8":[2331,1360],"el9":[2091,1377],"el10":[1962,1249],"el11":[2078,1007],"el12":[1872,884],"el13":[2150,616],"el14":[1779,471],"el15":[1548,384],"el16":[1174,480],"el17":[1309,681]};
+		var i=1;
+		Object.each(els,function(coor,el){
+			(function(){
+				map.addPoint(el,coor);
+			//	i+=1;
+			}).delay(200*i);
+		/*	(function(){
+				map.delPoint(el);
+			//	i+=1;
+			}).delay(200*i+10000);
+		*/	i+=1
+		});
+		/*(function(){
+		//	map.detach();
+			map.centerToPoint('el2',45);
+		}).delay(3000);
+		
+		(function(){
+		//	map.detach();
+			map.centerToPoint('el5');
+		}).delay(6000);
+		
+		(function(){
+		//	map.detach();
+			map.centerToPoint('el5',90);
+		}).delay(8000);
+		(function(){
+		//	map.detach();
+			map.centerToPoint('el8',75);
+		}).delay(11000);
+		
+		(function(){
+		//	map.detach();
+			map.centerToPoint('el11',80);
+		}).delay(14000);
+		
+		(function(){
+		//	map.detach();
+			map.centerToPoint('el15',30);
+		}).delay(19000);
+		
+		(function(){
+		//	map.detach();
+			map.zoomTo(70);
+		}).delay(21000);
+		
+		/*(function(){
+		//	map.detach();
+			map.centerTo(800,600,100);
+		}).delay(10000);
+		*/
+	});
+});
+</script>
+</body>
+</html>
