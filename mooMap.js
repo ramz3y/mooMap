@@ -200,13 +200,13 @@ var mooMap= new Class({
 				}
 			}).inject($(this.M.id+'-dragger'));
 	},
-	bulkAddPoint:function(els){
+	bulkAddPoint:function(els){ //Bulk add point
 		var crthis=this;
 		Object.each(els,function(coor,el){
 			crthis.addPoint(el,coor);
 		});
 	},
-	delPoint:function(el){
+	delPoint:function(el){ //remove point
 			element=$(this.M.id+'-dragger').getElementById(this.M.id+'-'+el);
 			if(element!=undefined){
 				element.destroy();
@@ -216,16 +216,16 @@ var mooMap= new Class({
 	
 		
 	},
-	delAllPoints:function(){
+	delAllPoints:function(){ //Remove all points from the map
 		$(this.M.id+'-dragger').getElements('div.points').destroy();
 	},
-	centerTo:function(x,y,zoom){
+	centerTo:function(x,y,zoom){ //set map center
 		oz=this.options.zoom
 		$(this.M.id+'-center').setStyles({'left':x,'top':y});
 		this.options.zoom= zoom!=undefined  ? zoom : this.options.zoom;
 		this.remap(oz,$(this.M.id+'-dragger'));
 	},
-	centerToPoint:function(el,zoom){
+	centerToElement:function(el,zoom){ //center map to element coordinates
 		
 			elFel=$(this.M.id+'-dragger').getElementById(this.M.id+'-'+el)
 			elFid=$(this.M.id+'-dragger').getElementById(el);
@@ -243,7 +243,7 @@ var mooMap= new Class({
 		this.remap(oZ,$(this.M.id+'dragger'));
 	}
 	,
-	detach : function(){
+	detach : function(){ // Detach map
 		imag=$(this.M.id)
 		imag.erase('style')
 		w=$(this.M.id+'-wrapper')
