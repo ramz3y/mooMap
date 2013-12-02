@@ -25,55 +25,58 @@ window.addEvent('domready',function(){
 			els={"el0":[2204,1079],"el1":[1871,892],"el2":[1504,1020],"el3":[1340,982],"el4":[1656,756],"el5":[1862,762],"el6":[1664,1479],"el7":[2155,1553],"el8":[2331,1360],"el9":[2091,1377],"el10":[1962,1249],"el11":[2078,1007],"el12":[1872,884],"el13":[2150,616],"el14":[1779,471],"el15":[1548,384],"el16":[1174,480],"el17":[1309,681]};
 		var i=1;
 		Object.each(els,function(coor,el){
+			//ADD first Vague points
 			(function(){
 				map.addPoint(el,coor);
-			//	i+=1;
 			}).delay(200*i);
-		/*	(function(){
+			// Self destruct
+			(function(){
 				map.delPoint(el);
-			//	i+=1;
 			}).delay(200*i+10000);
-		*/	i+=1
+			
+			//ADD second vague points
+			(function(){
+				map.addPoint(el,coor);
+				}).delay(200*i+21);
+			i+=1
 		});
-		/*(function(){
-		//	map.detach();
-			map.centerToPoint('el2',45);
-		}).delay(3000);
+		// Move to,some point
+			(function(){
+				map.centerToPoint('el2',45);
+			}).delay(3000);
+			
+			(function(){
+				map.centerToPoint('el5');
+			}).delay(6000);
+			
+			(function(){
+				map.centerToPoint('el5',90);
+			}).delay(8000);
+			(function(){
+				map.centerToPoint('el8',75);
+			}).delay(11000);
+			
+			(function(){
+				map.centerToPoint('el11',80);
+			}).delay(14000);
+			
+			(function(){
+				map.centerToPoint('el15',30);
+			}).delay(19000);
+			
+			(function(){
+				map.centerTo(500,500,50);
+			}).delay(21000);
 		
+		// DELETE ALL POINT
 		(function(){
-		//	map.detach();
-			map.centerToPoint('el5');
-		}).delay(6000);
-		
+			map.delAllPoints(70);
+		}).delay(25000);
+		// DETACH map
 		(function(){
-		//	map.detach();
-			map.centerToPoint('el5',90);
-		}).delay(8000);
-		(function(){
-		//	map.detach();
-			map.centerToPoint('el8',75);
-		}).delay(11000);
-		
-		(function(){
-		//	map.detach();
-			map.centerToPoint('el11',80);
-		}).delay(14000);
-		
-		(function(){
-		//	map.detach();
-			map.centerToPoint('el15',30);
-		}).delay(19000);
-		
-		(function(){
-		//	map.detach();
-			map.zoomTo(70);
-		}).delay(21000);
-		
-		/*(function(){
-		//	map.detach();
+			map.detach();
 			map.centerTo(800,600,100);
-		}).delay(10000);
-		*/
+		}).delay(27000);
 	});
 });
 </script>
