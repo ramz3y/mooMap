@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="http://jsfiddle.net/js/lib/mootools-core-1.4.5-compat.js"></script>
+<script src="http://jsfiddle.net/js/lib/mootools-more-1.4.0.1-compat.js"></script>
+<script src="mooMap.js"></script>
+<title>mooMap Sample</title>
+<link href="mooMap.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<!--
+    http://makkamappa.com/system/maps/878/original/Bangalore-City-Map.gif
+    http://www.lib.utexas.edu/maps/historical/iraq_northern_1970.jpg
+    http://www.zonu.com/images/0X0/2009-09-18-7087/World-physical-map-2003.jpg
+    maps/iraq_northern_1970.jpg
+    http://www.ezilon.com/maps/images/africa/political-map-of-Togo.gif
+-->
+	<img src="http://www.ezilon.com/maps/images/africa/political-map-of-Togo.gif" id="mymap"/>
+<script>
+window.addEvent('domready',function(){
+	$('mymap').addEvent('load',function(){
+		var map=new mooMap(this,{width:400,height:740});
+		});
+});
+</script>
+</body>
+</html>
