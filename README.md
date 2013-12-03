@@ -3,6 +3,10 @@ mooMap
 
 simple map using mootools
 explore large image on a framesimple map using mootools
+## Requires
+
+* Mootools Core
+* Mootools More
 
 ## getting started
 To use mooMap insert an image and create a new mooMap
