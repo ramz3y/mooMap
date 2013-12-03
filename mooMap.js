@@ -4,7 +4,7 @@ var mooMap= new Class({
 		width:400,
 		height:300,
 		zoom:100,
-		isMobile:false
+		isMobile:false,
 	},
 	initialize : function(el,options){ // initialize map elements
 		if(options!=undefined){
@@ -12,7 +12,7 @@ var mooMap= new Class({
 			this.options.height = options.height!=undefined ? options.height : this.options.height;
 			this.options.isMobile = options.isMobile!=undefined ? options.isMobile : false;
 			this.options.zoom = options.zoom!=undefined ? options.zoom : this.options.zoom;
-			this.options.center = (options.center!=undefined && options.center[0] && options.center[1]) ? options.center : [(this.options.width/2),(this.options.height/2)];
+			this.options.center = (options.center!=undefined && options.center[0] && options.center[1]) ? options.center : [(parseInt(el.getStyle('width'))/2),(parseInt(el.getStyle('width'))/2)];
 			
 		}
 			console.log(this.options.center);
@@ -58,7 +58,6 @@ var mooMap= new Class({
 		var centerpoint=new Element('<div>',{
 			id:this.M.id+'-center',
 			class:'point',
-			text:'+',
 			styles:{
 				'top':this.options.center[0],
 				'left':this.options.center[1],
